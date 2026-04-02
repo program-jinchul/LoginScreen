@@ -77,12 +77,15 @@ namespace LoginScreen
 
             if (inputID == myID && inputPW == myPW)
             {
+                lblErrorMsg.Visible = false;
                 MessageBox.Show("로그인성공!", "로그인", MessageBoxButtons.OK);
             }
             else
             {
                 MessageBox.Show("로그인실패~", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorMsg.Visible = true;
             }
+
         }
 
         private void txtId_KeyDown(object sender, KeyEventArgs e)

@@ -38,7 +38,7 @@
             // 
             lblAppName.AutoSize = true;
             lblAppName.Font = new Font("한컴 고딕", 48F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            lblAppName.ForeColor = Color.FromArgb(255, 128, 0);
+            lblAppName.ForeColor = Color.FromArgb(128, 64, 0);
             lblAppName.Location = new Point(215, 45);
             lblAppName.Name = "lblAppName";
             lblAppName.Size = new Size(394, 166);
@@ -57,6 +57,7 @@
             txtId.Text = "아이디";
             txtId.TextChanged += txtId_TextChanged;
             txtId.Enter += txtId_Enter;
+            txtId.KeyDown += txtId_KeyDown;
             txtId.Leave += txtId_Leave;
             // 
             // txtPw
@@ -70,6 +71,7 @@
             txtPw.Text = "패스워드";
             txtPw.TextChanged += txtPw_TextChanged;
             txtPw.Enter += txtPw_Enter;
+            txtPw.KeyDown += txtPw_KeyDown;
             txtPw.Leave += txtPw_Leave;
             // 
             // btnLogin
@@ -89,6 +91,7 @@
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 192, 192);
             ClientSize = new Size(871, 753);
             Controls.Add(btnLogin);
             Controls.Add(txtPw);

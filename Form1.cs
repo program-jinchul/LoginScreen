@@ -68,18 +68,38 @@ namespace LoginScreen
             }
         }
 
-        string myID = "admin"; 
+        string myID = "admin";
         string myPW = "superman";
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string inputID = txtId.Text;
             string inputPW = txtPw.Text;
-            
-            if (inputID == myID && inputPW == myPW) { 
-                MessageBox.Show("로그인성공!"); 
-            } 
-            else { 
-                MessageBox.Show("로그인실패~"); 
+
+            if (inputID == myID && inputPW == myPW)
+            {
+                MessageBox.Show("로그인성공!", "로그인", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("로그인실패~", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 기본비프음방지
+                txtPw.Focus(); // 패스워드입력창이포커스를갖게끔
+            }
+        }
+
+        private void txtPw_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 기본비프음방지
+                btnLogin.PerformClick(); // 버튼이눌린것처럼만들기
             }
         }
     }
